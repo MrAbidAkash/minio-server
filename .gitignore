@@ -3,7 +3,7 @@
 # =============================================================================
 
 # Environment file with real credentials — NEVER commit this
-.env
+# .env
 
 # Data directory — managed by Docker bind mount
 data/*
