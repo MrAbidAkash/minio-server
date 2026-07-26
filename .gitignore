@@ -1,0 +1,18 @@
+# =============================================================================
+# .gitignore for MinIO Docker Stack
+# =============================================================================
+
+# Environment file with real credentials — NEVER commit this
+.env
+
+# Data directory — managed by Docker bind mount
+data/*
+!data/.gitkeep
+
+# Backup archives
+backups/*
+!backups/.gitkeep
+
+# OS junk
+.DS_Store
+Thumbs.db
