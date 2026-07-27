@@ -63,6 +63,14 @@ if [ -f ".env" ]; then
 else
   cp .env.example .env
   info "Created .env from .env.example"
+  
+  # Detect server IP and update .env automatically
+  SERVER_IP=$(hostname -I | awk '{print $1}')
+  if [ -n "$SERVER_IP" ]; then
+    info "Detected IP: $SERVER_IP. Updating .env..."
+    sed -i "s|YOUR_SERVER_IP|$SERVER_IP|g" .env
+  fi
+
   warning "⚠  IMPORTANT: Edit .env and set strong credentials before production!"
   warning "   nano .env"
 fi
